@@ -3,64 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soldado3 Ltd</title>
+  <title data-i18n="title">Soldado3 Ltd</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <!-- Header -->
   <header class="bg-black p-6 text-center">
-    <img src="logo.png" alt="Logo Soldado3 Ltd" class="mx-auto h-20 mb-4" />
-    <h1 class="text-3xl font-bold">Soldado3 Ltd</h1>
-    <p class="text-gray-400">Música original, proyectos únicos.</p>
+    <h1 class="text-3xl font-bold" data-i18n="title">Soldado3 Ltd</h1>
+    <p class="text-gray-400" data-i18n="subtitle">Música original, proyectos únicos.</p>
   </header>
 
-  <!-- Navegación -->
-  <nav class="bg-gray-800 flex justify-center space-x-6 py-4">
-    <a href="#canciones" class="hover:text-yellow-400">Canciones</a>
-    <a href="#proyectos" class="hover:text-yellow-400">Proyectos</a>
-    <a href="#contacto" class="hover:text-yellow-400">Contacto</a>
-  </nav>
+  <div class="text-right p-4">
+    <select id="lang-select" class="text-black">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
+  </div>
 
-  <!-- Canciones -->
-  <section id="canciones" class="p-8">
-    <h2 class="text-2xl font-bold mb-4 border-b border-yellow-500 inline-block">Canciones</h2>
-    <div class="grid md:grid-cols-2 gap-8 mt-6">
-      <!-- Ejemplo de canción -->
-      <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-2">Demo Canción</h3>
-        <audio controls class="w-full">
-          <source src="demo.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio.
-        </audio>
-        <div class="mt-2 text-sm">
-          <a href="https://open.spotify.com/artist/0q2sQLOYyucM7olBAlRYiC" target="_blank" class="text-blue-400 hover:underline">Spotify Oficial</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proyectos -->
-  <section id="proyectos" class="p-8 bg-gray-800">
-    <h2 class="text-2xl font-bold mb-4 border-b border-yellow-500 inline-block">Proyectos</h2>
-    <p class="text-gray-300 mt-4">
-      Aquí puedes destacar tus álbumes, colaboraciones o ideas en desarrollo.
-    </p>
-    <ul class="list-disc list-inside mt-4 text-gray-400">
-      <li>Proyecto 1 – Descripción breve.</li>
-      <li>Colaboración con [artista] – año.</li>
-    </ul>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="p-8">
-    <h2 class="text-2xl font-bold mb-4 border-b border-yellow-500 inline-block">Contacto</h2>
-    <p class="mb-2">¿Te interesa colaborar o comprar contenido?</p>
-    <p class="text-gray-400">Envíame un correo a: <a href="mailto:tucorreo@example.com" class="text-yellow-400 underline">tucorreo@example.com</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-black text-center py-6 mt-6">
-    <p class="text-gray-600">&copy; 2025 Soldado3 Ltd. Todos los derechos reservados.</p>
-  </footer>
+  <script src="lang/lang.js"></script>
 </body>
 </html>
