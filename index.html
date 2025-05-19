@@ -1,68 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Soldado3 Ltd</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    function setLanguage(lang) {
-      const elements = document.querySelectorAll("[data-lang]");
-      elements.forEach(el => {
-        el.style.display = el.dataset.lang === lang ? "block" : "none";
-      });
-    }
-  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <!-- Header -->
-  <header class="bg-black text-center p-6">
-    <img src="logo.png" alt="Logo Soldado3 Ltd" class="mx-auto h-24 mb-4" />
-    <h1 class="text-4xl font-bold">🎤 Soldado3 Ltd</h1>
-    <p class="text-gray-400 mt-2">Música original, proyectos únicos.</p>
-  </header>
 
-  <!-- Language Selector -->
-  <div class="flex justify-end p-4">
-    <button onclick="setLanguage('es')" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-3 rounded-l">Español</button>
-    <button onclick="setLanguage('en')" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-3 rounded-r">English</button>
+  <!-- Language Switch -->
+  <div class="text-right p-4">
+    <button onclick="setLanguage('es')" class="mx-2 hover:text-yellow-400">ES</button>
+    <button onclick="setLanguage('en')" class="mx-2 hover:text-yellow-400">EN</button>
   </div>
 
-  <!-- Hero Section -->
-  <section class="text-center py-10 px-4">
-    <div data-lang="es">
-      <h2 class="text-3xl md:text-5xl font-bold mb-4">¡Descubre el sonido que transforma!</h2>
-      <p class="text-lg text-gray-300">Bienvenido al universo musical de Soldado3. Ritmos que cuentan historias.</p>
-    </div>
-    <div data-lang="en" style="display:none;">
-      <h2 class="text-3xl md:text-5xl font-bold mb-4">Discover the Sound That Transforms!</h2>
-      <p class="text-lg text-gray-300">Welcome to the musical universe of Soldado3. Beats that tell stories.</p>
+  <!-- Header -->
+  <header class="text-center p-8 bg-black">
+    <img src="logo.png" alt="Logo Soldado3 Ltd" class="mx-auto h-24 mb-4">
+    <h1 class="text-4xl font-bold">Soldado3 Ltd</h1>
+    <p id="tagline" class="text-gray-400 mt-2">Música original, proyectos únicos.</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="flex justify-center space-x-6 py-6 bg-gray-800">
+    <a href="#canciones" class="hover:text-yellow-400" id="nav-canciones">Canciones</a>
+    <a href="#proyectos" class="hover:text-yellow-400" id="nav-proyectos">Proyectos</a>
+    <a href="#contacto" class="hover:text-yellow-400" id="nav-contacto">Contacto</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="canciones" class="p-8 text-center">
+    <h2 class="text-2xl font-semibold mb-4" id="title-canciones">Canciones</h2>
+    <p>Escucha nuestra música en:</p>
+    <div class="mt-4 flex justify-center space-x-4">
+      <a href="https://www.youtube.com/@Soldado3.c" target="_blank" class="hover:text-red-500">YouTube</a>
+      <a href="https://open.spotify.com/artist/0q2sQLOYyucM7olBAlRYiC" target="_blank" class="hover:text-green-400">Spotify</a>
     </div>
   </section>
 
-  <!-- Redes Sociales -->
-  <section class="text-center py-6">
-    <h3 class="text-xl font-semibold mb-4">Sígueme / Follow Me</h3>
-    <div class="flex justify-center space-x-6 text-3xl">
-      <a href="https://www.youtube.com/@Soldado3.c" target="_blank" class="hover:text-red-500">🎥</a>
-      <a href="https://open.spotify.com/artist/0q2sQLOYyucM7olBAlRYiC" target="_blank" class="hover:text-green-400">🎵</a>
-      <a href="https://www.instagram.com/soldado3.c/" target="_blank" class="hover:text-pink-400">📸</a>
-    </div>
+  <section id="proyectos" class="p-8 text-center bg-gray-800">
+    <h2 class="text-2xl font-semibold mb-4" id="title-proyectos">Proyectos</h2>
+    <p id="desc-proyectos">Próximamente nuevos lanzamientos y colaboraciones exclusivas.</p>
   </section>
 
-  <!-- Contacto -->
-  <section class="text-center py-6">
-    <h3 class="text-xl font-semibold mb-2" data-lang="es">Contacto</h3>
-    <h3 class="text-xl font-semibold mb-2" data-lang="en" style="display:none;">Contact</h3>
-    <p class="text-gray-300">soldado.music3@gmail.com</p>
-    <a href="mailto:soldado.music3@gmail.com" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-full">
-      ✉️ Email
-    </a>
+  <section id="contacto" class="p-8 text-center">
+    <h2 class="text-2xl font-semibold mb-4" id="title-contacto">Contacto</h2>
+    <p>Email: <a href="mailto:soldado.music3@gmail.com" class="text-yellow-400">soldado.music3@gmail.com</a></p>
+    <p class="mt-2">Síguenos en Instagram: <a href="https://www.instagram.com/soldado3.c/" target="_blank" class="text-pink-400 hover:underline">@soldado3.c</a></p>
   </section>
 
-  <footer class="text-center text-gray-600 text-sm p-4">
-    © 2025 Soldado3 Ltd
+  <!-- Footer -->
+  <footer class="text-center text-gray-500 text-sm py-4 bg-black">
+    &copy; 2025 Soldado3 Ltd. Todos los derechos reservados.
   </footer>
+
+  <!-- JavaScript for Language Switching -->
+  <script>
+    const translations = {
+      es: {
+        tagline: "Música original, proyectos únicos.",
+        "nav-canciones": "Canciones",
+        "nav-proyectos": "Proyectos",
+        "nav-contacto": "Contacto",
+        "title-canciones": "Canciones",
+        "title-proyectos": "Proyectos",
+        "desc-proyectos": "Próximamente nuevos lanzamientos y colaboraciones exclusivas.",
+        "title-contacto": "Contacto"
+      },
+      en: {
+        tagline: "Original music, unique projects.",
+        "nav-canciones": "Songs",
+        "nav-proyectos": "Projects",
+        "nav-contacto": "Contact",
+        "title-canciones": "Songs",
+        "title-proyectos": "Projects",
+        "desc-proyectos": "Coming soon: new releases and exclusive collaborations.",
+        "title-contacto": "Contact"
+      }
+    };
+
+    function setLanguage(lang) {
+      for (const id in translations[lang]) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = translations[lang][id];
+      }
+      document.documentElement.lang = lang;
+    }
+  </script>
 </body>
 </html>
