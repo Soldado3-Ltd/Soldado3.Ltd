@@ -1,24 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title data-i18n="title">Soldado3 Ltd</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soldado3 Ltd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function setLanguage(lang) {
+      const elements = document.querySelectorAll("[data-lang]");
+      elements.forEach(el => {
+        el.style.display = el.dataset.lang === lang ? "block" : "none";
+      });
+    }
+  </script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <header class="bg-black p-6 text-center">
-    <h1 class="text-3xl font-bold" data-i18n="title">Soldado3 Ltd</h1>
-    <p class="text-gray-400" data-i18n="subtitle">Música original, proyectos únicos.</p>
+  <!-- Header -->
+  <header class="bg-black text-center p-6">
+    <img src="logo.png" alt="Logo Soldado3 Ltd" class="mx-auto h-24 mb-4" />
+    <h1 class="text-4xl font-bold">🎤 Soldado3 Ltd</h1>
+    <p class="text-gray-400 mt-2">Música original, proyectos únicos.</p>
   </header>
 
-  <div class="text-right p-4">
-    <select id="lang-select" class="text-black">
-      <option value="es">Español</option>
-      <option value="en">English</option>
-    </select>
+  <!-- Language Selector -->
+  <div class="flex justify-end p-4">
+    <button onclick="setLanguage('es')" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-3 rounded-l">Español</button>
+    <button onclick="setLanguage('en')" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-1 px-3 rounded-r">English</button>
   </div>
 
-  <script src="lang/lang.js"></script>
+  <!-- Hero Section -->
+  <section class="text-center py-10 px-4">
+    <div data-lang="es">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">¡Descubre el sonido que transforma!</h2>
+      <p class="text-lg text-gray-300">Bienvenido al universo musical de Soldado3. Ritmos que cuentan historias.</p>
+    </div>
+    <div data-lang="en" style="display:none;">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Discover the Sound That Transforms!</h2>
+      <p class="text-lg text-gray-300">Welcome to the musical universe of Soldado3. Beats that tell stories.</p>
+    </div>
+  </section>
+
+  <!-- Redes Sociales -->
+  <section class="text-center py-6">
+    <h3 class="text-xl font-semibold mb-4">Sígueme / Follow Me</h3>
+    <div class="flex justify-center space-x-6 text-3xl">
+      <a href="https://www.youtube.com/@Soldado3.c" target="_blank" class="hover:text-red-500">🎥</a>
+      <a href="https://open.spotify.com/artist/0q2sQLOYyucM7olBAlRYiC" target="_blank" class="hover:text-green-400">🎵</a>
+      <a href="https://www.instagram.com/soldado3.c/" target="_blank" class="hover:text-pink-400">📸</a>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="text-center py-6">
+    <h3 class="text-xl font-semibold mb-2" data-lang="es">Contacto</h3>
+    <h3 class="text-xl font-semibold mb-2" data-lang="en" style="display:none;">Contact</h3>
+    <p class="text-gray-300">soldado.music3@gmail.com</p>
+    <a href="mailto:soldado.music3@gmail.com" class="mt-4 inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded-full">
+      ✉️ Email
+    </a>
+  </section>
+
+  <footer class="text-center text-gray-600 text-sm p-4">
+    © 2025 Soldado3 Ltd
+  </footer>
 </body>
 </html>
